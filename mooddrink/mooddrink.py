@@ -1,3 +1,29 @@
+def tambah_mood(mood_drinks):
+    print("=== Tambah Mood Baru ===")
+    mood = input("Masukkan mood baru: ")
+    minuman = input("Masukkan minuman untuk mood tersebut: ")
+    mood_drinks[mood] = minuman
+    print("Mood baru berhasil ditambahkan!")
+    print("Data sekarang:", mood_drinks)
+
+mood_drinks = {}
+tambah_mood(mood_drinks)
+
+def hapus_mood(mood_drinks):
+    print("=== Hapus Mood ===")
+    mood = input("Masukkan mood yang ingin dihapus: ")
+
+    if mood in mood_drinks:
+        mood_drinks.pop(mood)
+        print("Mood berhasil dihapus!")
+    else:
+        print("Mood tidak ditemukan.")
+
+    print("Data sekarang:", mood_drinks)
+    
+mood_drinks = {}
+hapus_mood(mood_drinks)
+
 mood_drink = {
     "senang" : "Jus Mangga"
 }
@@ -32,3 +58,4 @@ while True:
     elif pilihan == 5:
         lihat_riwayat():
     elif pilihan 
+

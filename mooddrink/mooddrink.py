@@ -1,3 +1,32 @@
+mood_drinks = {
+    "senang": "Es Teh Manis",
+    "sedih": "Cokelat Hangat",
+    "lelah": "Kopi Latte",
+    "semangat": "Jus Jeruk",
+    "galau": "Boba Brown Sugar",
+    "relax": "Teh Chamomile"
+}
+
+def input_mood():
+    mood = input("Masukkan mood Anda: ").lower()
+
+    if mood in mood_drinks:
+        minuman = mood_drinks[mood]
+        print(f"Rekomendasi minuman untuk mood '{mood}': {minuman}")
+
+        # Simpan riwayat ke file
+        with open("riwayat.txt", "a") as file:
+            file.write(f"Mood: {mood} -> Minuman: {minuman}\n")
+
+    else:
+        print("Maaf, mood tidak ditemukan dalam daftar.")
+
+
+def lihat_daftar_mood():
+    print("\n=== Daftar Mood dan Rekomendasi Minuman ===")
+    for mood, drink in mood_drinks.items():
+        print(f"- {mood.capitalize()} : {drink}")
+
 def tambah_mood(mood_drinks):
     print("=== Tambah Mood Baru ===")
     mood = input("Masukkan mood baru: ")
@@ -58,4 +87,5 @@ while True:
     elif pilihan == 5:
         lihat_riwayat():
     elif pilihan 
+
 

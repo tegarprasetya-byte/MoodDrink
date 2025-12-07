@@ -7,7 +7,7 @@ mood_drinks = {
     "relax": "Teh Chamomile"
 }
 
-def input_mood():
+def rekomendasi_mood():
     mood = input("Masukkan mood Anda: ").lower()
 
     if mood in mood_drinks:
@@ -26,18 +26,15 @@ def lihat_daftar_mood():
     for mood, drink in mood_drinks.items():
         print(f"- {mood.capitalize()} : {drink}")
         
-def tambah_mood(mood_drinks):
+def tambah_mood():
     print("=== Tambah Mood Baru ===")
-    mood = input("Masukkan mood baru: ")
-    minuman = input("Masukkan minuman untuk mood tersebut: ")
+    mood = input("Masukkan mood baru: ").strip()
+    minuman = input("Masukkan minuman untuk mood tersebut: ").strip().title()
     mood_drinks[mood] = minuman
     print("Mood baru berhasil ditambahkan!")
     print("Data sekarang:", mood_drinks)
-
-mood_drinks = {}
-tambah_mood(mood_drinks)
-
-def hapus_mood(mood_drinks):
+    
+def hapus_mood():
     print("=== Hapus Mood ===")
     mood = input("Masukkan mood yang ingin dihapus: ")
 
@@ -49,17 +46,13 @@ def hapus_mood(mood_drinks):
 
     print("Data sekarang:", mood_drinks)
     
-mood_drinks = {}
-hapus_mood(mood_drinks)
-
-mood_drink = {
-    "senang" : "Jus Mangga"
-}
-def rekomendasi_mood():
-def lihat_daftar_mood():
-def tambah_mood():
-def hapus_mood():
 def lihat_riwayat():
+    with open("riwayat.txt","r") as file:
+        isi = file.read()
+        if len(isi) == 0 :
+            print("Belum ada Riwayat Mood yang Tersimpan!\n")
+        else:
+            print(isi)
 
 while True:
     print("===== Program Mood Drink =====")
@@ -76,16 +69,18 @@ while True:
         print("Input Harus Berupa Angka!\n")
         
     if pilihan == 1:
-        rekomendasi_mood():
+        rekomendasi_mood()
     elif pilihan == 2:
-        lihat_daftar_mood():
+        lihat_daftar_mood()
     elif pilihan == 3:
-        tambah_mood():
+        tambah_mood()
     elif pilihan == 4:
-        hapus_mood():
+        hapus_mood()
     elif pilihan == 5:
-        lihat_riwayat():
-    elif pilihan 
+        lihat_riwayat()
+    elif pilihan == 6:
+        break
+
 
 
 

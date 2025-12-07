@@ -14,7 +14,6 @@ def input_mood():
         minuman = mood_drinks[mood]
         print(f"Rekomendasi minuman untuk mood '{mood}': {minuman}")
 
-        # Simpan riwayat ke file
         with open("riwayat.txt", "a") as file:
             file.write(f"Mood: {mood} -> Minuman: {minuman}\n")
 
@@ -87,5 +86,6 @@ while True:
     elif pilihan == 5:
         lihat_riwayat():
     elif pilihan 
+
 
 
